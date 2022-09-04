@@ -1,3 +1,3 @@
-export interface AuctionState {
-  endDate: string
+export interface SwapState {
+  srcAmount: string
 }
