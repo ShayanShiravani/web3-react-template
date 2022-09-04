@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import auction  from './auction/reduser'
+import swap  from './swap/reduser'
 
 export const store = configureStore({
   reducer: {
-    auction
+    swap
   }
 })
 
