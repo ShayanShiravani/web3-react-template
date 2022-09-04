@@ -5,9 +5,9 @@ import { UnsupportedChainIdError } from '@web3-react/core'
 
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
-import { addRPC, shortenAddress } from 'utils/wallet'
-import { getValidChains } from 'configs'
-import { NameChainMap } from 'configs/constants'
+import { addRPC, shortenAddress } from '../../utils/wallet'
+import { getValidChains } from '../../configs/constants/chains'
+import { NameChainMap } from '../../configs/constants/chains'
 const WalletModal = dynamic(() => import('../Modal/WalletModal'))
 
 const AppInfo = styled(Flex)`
@@ -19,7 +19,7 @@ const AppInfo = styled(Flex)`
 `
 
 const Menu: React.FC<{selectedChain?: number}> = ({ selectedChain }) => {
-  const { account, chainId, error } = useWeb3React()
+  const { account, chainId, error, library } = useWeb3React()
 
   const [open, setOpen] = React.useState(false)
 
@@ -52,7 +52,7 @@ const Menu: React.FC<{selectedChain?: number}> = ({ selectedChain }) => {
           ) : (
             <button
               className="btn-secondary-inverted btn-small hidden sm:block sm:mr-3"
-              onClick={() => addRPC(validChainId)}
+              onClick={() => addRPC(validChainId, library)}
             >
               Switch to {NameChainMap[validChainId]}
             </button>
@@ -60,7 +60,7 @@ const Menu: React.FC<{selectedChain?: number}> = ({ selectedChain }) => {
         ) : error instanceof UnsupportedChainIdError ? (
           <button
             className="hide-on-mobile btn-small btn-secondary-inverted hidden sm:block sm:mr-3"
-            onClick={() => addRPC(validChainId)}
+            onClick={() => addRPC(validChainId, library)}
           >
             Switch to {NameChainMap[validChainId]}
           </button>
