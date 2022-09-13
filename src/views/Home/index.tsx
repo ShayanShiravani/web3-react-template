@@ -1,4 +1,4 @@
-import Card from "components/Card";
+import Card from "../../components/Card";
 import Head from "next/head";
 import React from "react";
 
@@ -9,9 +9,6 @@ const Home: React.FC = () => {
         <title>Web3 React Template</title>
       </Head>
       <div className={'relative bg-blur bg-cover'}>
-        <picture>
-          <img className={'absolute -top-8'} src={'/images/common/blob-bg.svg'} alt="test" />
-        </picture>
         <div className={'py-10 lg:py-20 px-4 sm:px-20 relative z-10'}>
           <section className={'flex flex-col xl:flex-row items-center xl:items-start justify-evenly mb-24 lg:mb-36'}>
             <section className="lg:w-3/5 w-full px-2 mb-2">
