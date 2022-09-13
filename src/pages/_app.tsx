@@ -24,11 +24,14 @@ function MyApp(props: AppProps) {
 function App({ Component, pageProps }: AppProps) {
   
   return (
-    <Web3ReactManager>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-    </Web3ReactManager>
+    <>
+      <Web3ReactManager>
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+      </Web3ReactManager>
+      {/* Put static parts of your app here (e.g. non-web3 parts) */}
+    </>
   )
 }
 
