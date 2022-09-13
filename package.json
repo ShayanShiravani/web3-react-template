@@ -1,9 +1,10 @@
 {
-  "name": "debond-ui",
+  "name": "web3-react-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build-and-export": "next build && next export",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
