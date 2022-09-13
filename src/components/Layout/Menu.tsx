@@ -38,7 +38,7 @@ const Menu: React.FC<{selectedChain?: number}> = ({ selectedChain }) => {
     <>
       <AppInfo>
         <picture>
-          <img width={"130px"} src={'/images/common/muon-logo.svg'} alt={'Logo'} />
+          <img width={"40px"} src={'/images/common/logo.svg'} alt={'Logo'} />
         </picture>
       </AppInfo>
       <AppInfo>
