@@ -13,7 +13,8 @@ const WalletDropdown: React.FC<WalletDropdownType> = (props) => {
   const { text } = props
   return (
     <DropDown
-    buttonText={text}
+      buttonText={text}
+      position="left"
     >
       <div className="px-1 py-1 ">
         <Menu.Item>
