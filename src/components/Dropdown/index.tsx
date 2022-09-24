@@ -3,11 +3,12 @@ import React, { PropsWithChildren } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 interface DropDownType {
-  buttonText: string
+  buttonText: string,
+  position: "right" | "left"
 }
 
 const DropDown: React.FC<PropsWithChildren<DropDownType>> = (props) => {
-  const { children, buttonText } = props
+  const { children, buttonText, position } = props
   return (
     <Menu as="div" className="relative inline-block text-left text-indigo-500">
       <div>
@@ -19,7 +20,7 @@ const DropDown: React.FC<PropsWithChildren<DropDownType>> = (props) => {
           />
         </Menu.Button>
       </div>
-      <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-200 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-100">
+      <Menu.Items className={`absolute ${position}-0 mt-2 w-56 origin-top-right divide-y divide-gray-200 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-100`}>
       { children }
       </Menu.Items>
     </Menu>
